@@ -6,10 +6,15 @@ class Main{
 			int n = plainText.length();
 			String cipherText = "";
 			for(int i = 0; i < n; i++){
+				int flag = 0;
 				char temp = plainText.charAt(i);
-				temp += key;
-				if(temp > 'z' || (temp > 'Z' && temp < 'a'))
-					temp -= 26;
+				if(Character.isLetter(temp)){
+					if(temp <= 'Z')
+						flag = 1;
+					temp += key;
+					if((flag == 1 && temp > 'Z') || (flag == 0 && temp > 'z')) 
+						temp -= 26;
+				}
 				cipherText += temp+"";
 			}
 			return cipherText;
@@ -18,10 +23,15 @@ class Main{
 			int n = cipherText.length();
 			String plainText = "";
 			for(int i = 0; i < n; i++){
+				int flag = 0;
 				char temp = cipherText.charAt(i);
-				temp -= key;
-				if(temp < 'A' || (temp > 'Z' && temp < 'a'))
-					temp += 26;
+				if(Character.isLetter(temp)){
+					if(temp <= 'Z')
+						flag = 1;
+					temp -= key;
+					if((flag == 1 && temp < 'A') || (flag == 0 && temp < 'a')) 
+						temp += 26;
+				}
 				plainText += temp+"";
 			}
 			return plainText;
