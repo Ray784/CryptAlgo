@@ -2,19 +2,21 @@ import java.util.*;
 
 class Main{
 	private static class CaeserCipher{
+
+		private String preprocess(String text){
+			return (text.toLowerCase()).replaceAll("\\s+","");
+		}
+
 		private String encrypt(String plainText, int key){
+			plainText = preprocess(plainText);
 			int n = plainText.length();
 			String cipherText = "";
 			for(int i = 0; i < n; i++){
 				int flag = 0;
 				char temp = plainText.charAt(i);
-				if(Character.isLetter(temp)){
-					if(temp <= 'Z')
-						flag = 1;
-					temp += key;
-					if((flag == 1 && temp > 'Z') || (flag == 0 && temp > 'z')) 
-						temp -= 26;
-				}
+				temp += key;
+				if(temp > 'z') 
+					temp -= 26;
 				cipherText += temp+"";
 			}
 			return cipherText;
@@ -25,13 +27,9 @@ class Main{
 			for(int i = 0; i < n; i++){
 				int flag = 0;
 				char temp = cipherText.charAt(i);
-				if(Character.isLetter(temp)){
-					if(temp <= 'Z')
-						flag = 1;
-					temp -= key;
-					if((flag == 1 && temp < 'A') || (flag == 0 && temp < 'a')) 
-						temp += 26;
-				}
+				temp -= key;
+				if(temp < 'a')
+					temp += 26;
 				plainText += temp+"";
 			}
 			return plainText;
