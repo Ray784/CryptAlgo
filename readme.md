@@ -9,8 +9,9 @@
 9. playfair
 10. railfence
 11. rsa
-12. sha1
-13. vigenere
+12. sdes
+13. sha1
+14. vigenere
 
 compilation:
 >javac filename.java
