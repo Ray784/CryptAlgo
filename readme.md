@@ -2,8 +2,8 @@
 2. blowfish
 3. caeser
 4. columnar
-5. des
-6. dcolumnar
+5. dcolumnar
+6. des
 7. diffie
 8. hill
 9. playfair
