@@ -121,9 +121,9 @@ class Main{
 	}
 	public static void main(String args[]){
 		Scanner in = new Scanner(System.in);
-		System.out.printf("Enter plainText:(64- bit) ");
+		System.out.printf("Enter plainText:(64- bit hexadecimal): ");
 		String text = in.nextLine();
-		System.out.printf("Enter key:(64-bit) ");
+		System.out.printf("Enter key:(64-bit hexadecimal): ");
 		String key = in.nextLine();
 		BlowFish cipher = new BlowFish();
 		text = cipher.encrypt(text, key);
