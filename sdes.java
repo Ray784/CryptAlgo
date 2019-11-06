@@ -77,9 +77,9 @@ class Main{
 	}
 	public static void main(String args[]){
 		Scanner in = new Scanner(System.in);
-		System.out.printf("Enter plainText: ");
+		System.out.printf("Enter plainText:(8-bits): ");
 		String text = in.nextLine();
-		System.out.printf("Enter key: ");
+		System.out.printf("Enter key:(10-bits): ");
 		String key = in.nextLine();
 		SDES cipher = new SDES();
 		text = cipher.encrypt(text, key);

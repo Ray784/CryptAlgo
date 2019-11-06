@@ -102,6 +102,10 @@ class Main{
 		}
 
 		private String encrypt(String plainText, String key, int n){
+			key = preprocess(key);
+			plainText = preprocess(plainText);
+			while(plainText.length() % n != 0)
+				plainText += "z";
 			int [][]K = toIntArr(key, n, n);
 			String cipherText = "";
 			Matrices matrix = new Matrices();
