@@ -72,6 +72,7 @@ class Main{
 			return temp;
 		}
 	}
+	
 	private static class HillCipher{
 		String preprocess(String text){
 			text = text.replaceAll("[^a-zA-Z]+", "");

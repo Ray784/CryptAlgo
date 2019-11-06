@@ -75,6 +75,7 @@ class Main{
 			return cipherText;
 		}
 	}
+	
 	public static void main(String args[]){
 		Scanner in = new Scanner(System.in);
 		System.out.printf("Enter plainText:(8-bits): ");
