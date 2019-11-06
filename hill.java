@@ -118,6 +118,7 @@ class Main{
 		}
 
 		private String decrypt(String cipherText, String key, int n){
+			key = preprocess(key);
 			int [][]K = toIntArr(key, n, n);
 			String plainText = "";
 			Matrices matrix = new Matrices();
