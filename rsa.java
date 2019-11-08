@@ -7,7 +7,7 @@ class Main{
 		boolean isPrime(int number){
 			if(number<=1) return false;
 			if(number==3 || number==2) return true;
-			if(number %2 == 0) return false;
+			if(number % 2 == 0) return false;
 			for(int i = 3; i <= Math.sqrt(number); i += 2)
 				if(number % i == 0)
 					return false;
@@ -52,15 +52,15 @@ class Main{
 		int keyGenerate(){
 			int p = getRandomPrime();
 			int q = getRandomPrime();
-			n = p*q;
-			int phi = (p-1) * (q-1);
+			n = p * q;
+			int phi = (p - 1) * (q - 1);
 
 			Random rand = new Random();
-			int e = rand.nextInt(phi-2)+2;
+			int e = rand.nextInt(phi - 2) + 2;
 			privateKey = e;
 			while(privateKey == e){
 				while(gcd(e,phi) != 1)
-					e = rand.nextInt(phi-2)+2;
+					e = rand.nextInt(phi - 2) + 2;
 				privateKey = inverseMod(e, phi);
 			}
 			return e;
